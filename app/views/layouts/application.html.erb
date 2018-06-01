@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.2/css/all.css">
 
     <!-- Connect Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/superhero/bootstrap.min.css">
 
     <!-- Connect Bootstrap JavaScript and its dependencies -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -23,11 +23,37 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+  
   </head>
 
   <body>
-    <%= yield %>
+    
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Happy</a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="/bars">Browse Bars</a></li>
+          <li class="nav-item"><a class="nav-link" href="/items">Browse Food/Drink</a></li>
+          <li class="nav-item"><a class="nav-link" href="/times">Browse Times</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container"><%= yield %></div>
 
     <%= dev_tools if Rails.env.development? %>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p> Click here to go <a href="/"> Home </a>
+        </p> 
+        </div>
+      </div>
+    </div>
+  
+        
+    </div>
   </body>
+ 
 </html>
